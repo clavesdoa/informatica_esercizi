@@ -18,9 +18,8 @@ import java.util.Scanner;
 public class Esercizio_03 {
 
 	public static void main(String[] args) {
-		// try with resources. See
-		// "https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html"
-		try (Scanner input = new Scanner(System.in)) {
+		Scanner input = new Scanner(System.in);
+		try {
 			System.out.println("Inserisci un anno");
 			int anno = input.nextInt();
 			if (anno < 0) {
@@ -29,6 +28,10 @@ public class Esercizio_03 {
 				System.out.println("Anno bisestile");
 			} else {
 				System.out.println("Anno non bisestile");
+			}
+		} finally {
+			if (input != null) {
+				input.close();
 			}
 		}
 	}
