@@ -3,34 +3,37 @@ package informatica_esercizi.Lezione_AL_esercizi_02;
 import java.util.Scanner;
 
 /**
- * Scrivere un programma che inserisce dei numeri interi casuali2) (compresi fra
+ * Scrivere un programma che inserisce dei numeri interi casuali (compresi fra
  * un minimo e un massimo) in un vettore (la cui dimensione è fornita
- * dall’utente) secondo la seguente regola: l i numeri pari devono essere
- * inseriti a partire dalla prima cella libera a sinistra; l i numeri dispari
- * devono essere inseriti a partire dalla prima cella libera a destra.
+ * dall’utente), garantendo che i numeri caricati nel vettore siano in senso
+ * crescente.
  * 
  * @author Utente
  *
  */
-public class Esercizio_01 {
-
+public class Esercizio_09 {
 	private static int MIN = -500;
 	private static int MAX = 500;
 
 	public static void main(String[] args) {
 		int dim = ottieniDimensione();
 		int[] casuali = new int[dim];
-		int sinistra = 0;
-		int destra = dim - 1;
-		while (sinistra <= destra) {
-			int casuale = MIN + (int) ((MAX - MIN + 1) * RANDOM());
-			if (casuale % 2 == 0) {
-				casuali[sinistra++] = casuale;
-			} else {
-				casuali[destra--] = casuale;
-			}
-		}
+		caricaDati(casuali);
 		mostraDati(casuali);
+	}
+
+	private static void caricaDati(int[] vet) {
+		for (int i = 0; i < vet.length; i++) {
+			int casuale = MIN + (int) ((MAX - MIN + 1) * RANDOM());
+			for (int j = 0; j < i; j++) {
+				if (casuale < vet[j]) {
+					int temp = vet[j];
+					vet[j] = casuale;
+					casuale = temp;
+				}
+			}
+			vet[i] = casuale;
+		}
 	}
 
 	private static void mostraDati(int[] vet) {
@@ -59,4 +62,5 @@ public class Esercizio_01 {
 	private static double RANDOM() {
 		return Math.random();
 	}
+
 }
