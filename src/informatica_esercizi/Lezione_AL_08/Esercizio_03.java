@@ -1,6 +1,8 @@
-package informatica_esercizi;
+package informatica_esercizi.Lezione_AL_08;
 
 import java.util.Scanner;
+
+import static java.lang.System.out;
 
 /**
  * Scrivere un programma AnnoBisestile che chiede all’utente di inserire un
@@ -20,14 +22,14 @@ public class Esercizio_03 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		try {
-			System.out.println("Inserisci un anno");
+			out.println("Inserisci un anno");
 			int anno = input.nextInt();
 			if (anno < 0) {
-				System.out.println("Errore");
+				out.println("Errore");
 			} else if (Bisestile(anno)) {
-				System.out.println("Anno bisestile");
+				out.println("Anno bisestile");
 			} else {
-				System.out.println("Anno non bisestile");
+				out.println("Anno non bisestile");
 			}
 		} finally {
 			if (input != null) {

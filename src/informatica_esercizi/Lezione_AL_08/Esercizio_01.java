@@ -1,4 +1,6 @@
-package informatica_esercizi;
+package informatica_esercizi.Lezione_AL_08;
+
+import static java.lang.System.out;
 
 /**
  * Scrivere un programma StampeInutili che consiste del programma principale e
@@ -19,15 +21,15 @@ public class Esercizio_01 {
 	}
 
 	private static void stampeInutili1() {
-		System.out.println("stampe inutili 1");
+		out.println("stampe inutili 1");
 	}
 
 	private static void stampeInutili2() {
-		System.out.println("stampe inutili 2");
+		out.println("stampe inutili 2");
 	}
 
 	private static void stampeInutili3() {
-		System.out.println("stampe inutili 3");
+		out.println("stampe inutili 3");
 	}
 
 }

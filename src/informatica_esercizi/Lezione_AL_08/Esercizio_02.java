@@ -1,4 +1,4 @@
-package informatica_esercizi;
+package informatica_esercizi.Lezione_AL_08;
 
 /**
  * Riscrivere il programma StampeInutili uJlizzando un’unica procedura che viene

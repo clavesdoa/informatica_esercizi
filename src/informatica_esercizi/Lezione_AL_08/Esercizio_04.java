@@ -1,6 +1,8 @@
-package informatica_esercizi;
+package informatica_esercizi.Lezione_AL_08;
 
 import java.util.Scanner;
+
+import static java.lang.System.out;
 
 /**
  * Scrivere un programma CheGiorno che chiede all’utente di inserire: l un
@@ -17,17 +19,17 @@ public class Esercizio_04 {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		try {
-			System.out.println("Che giorno era il 1 gennaio? [0=Dom...6=Sab]");
+			out.println("Che giorno era il 1 gennaio? [0=Dom...6=Sab]");
 			int giorno_1gen = input.nextInt();
 			if (giorno_1gen < 0 || giorno_1gen > 6) {
-				System.out.println("Giorno non valido");
+				out.println("Giorno non valido");
 				return;
 			}
-			System.out.println("Inserisci la data di cui vuoi sapere il giorno");
+			out.println("Inserisci la data di cui vuoi sapere il giorno");
 			int giorno = Integer.valueOf(input.next());
 			int mese = Integer.valueOf(input.next());
 			if (!DataOk(giorno, mese)) {
-				System.out.println("Data non valida");
+				out.println("Data non valida");
 				return;
 			}
 			int giorno_data = (giorno_1gen + (GiorniTrascorsi(giorno, mese) % 7)) % 7;
@@ -77,28 +79,28 @@ public class Esercizio_04 {
 	private static void StampaGiorno(int g) {
 		switch (g) {
 		case 0:
-			System.out.println("Domenica");
+			out.println("Domenica");
 			break;
 		case 1:
-			System.out.println("Lunedi'");
+			out.println("Lunedi'");
 			break;
 		case 2:
-			System.out.println("Martedi'");
+			out.println("Martedi'");
 			break;
 		case 3:
-			System.out.println("Mercoledi'");
+			out.println("Mercoledi'");
 			break;
 		case 4:
-			System.out.println("Giovedi'");
+			out.println("Giovedi'");
 			break;
 		case 5:
-			System.out.println("Venerdi'");
+			out.println("Venerdi'");
 			break;
 		case 6:
-			System.out.println("Sabato");
+			out.println("Sabato");
 			break;
 		default:
-			System.out.println("Errore!!!");
+			out.println("Errore!!!");
 			break;
 		}
 	}
